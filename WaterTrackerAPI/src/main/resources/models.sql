@@ -1,4 +1,4 @@
-create database `water-api`
+create database `water-api`;
 
 use `water-api`;
 
