@@ -65,6 +65,13 @@ public class UserProfileController {
         return new ResponseEntity<>(followers, HttpStatus.OK);
     }
 
+    @GetMapping("{id}/following")
+    public ResponseEntity<Iterable<UserProfileDTO>> getFollowing(@PathVariable("id") String userId){
+        Iterable<UserProfileDTO> following = userProfileService.getFollowing(userId);
+        return new ResponseEntity<>(following, HttpStatus.OK);
+    }
+
+
     @PostMapping("follow")
     public ResponseEntity follow(@RequestBody Map<String,String> data){
         String userId = data.get("userId");

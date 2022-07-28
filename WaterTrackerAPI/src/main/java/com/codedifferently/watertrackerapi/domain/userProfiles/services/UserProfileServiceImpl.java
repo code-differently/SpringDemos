@@ -10,7 +10,6 @@ import com.codedifferently.watertrackerapi.security.firebase.services.FirebaseUs
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -108,6 +107,13 @@ public class UserProfileServiceImpl implements UserProfileService{
         UserProfile user = retrieveById(id);
         Set<UserProfile> followers = user.getFollowers();
         return convertToDtoList(followers);
+    }
+
+    @Override
+    public Iterable<UserProfileDTO> getFollowing(String id) throws ResourceNotFoundException {
+        UserProfile user = retrieveById(id);
+        Set<UserProfile> following = user.getFollowing();
+        return convertToDtoList(following);
     }
 
     private Iterable<UserProfileDTO> convertToDtoList(Iterable<UserProfile> profiles){

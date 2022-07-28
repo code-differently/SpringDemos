@@ -17,4 +17,6 @@ public interface UserProfileService {
     void follow(String userId, String followerId) throws ResourceNotFoundException;
     void unfollow(String userId, String followerId) throws ResourceNotFoundException;
     Iterable<UserProfileDTO> getFollowers(String id) throws ResourceNotFoundException;
+    Iterable<UserProfileDTO> getFollowing(String id) throws ResourceNotFoundException;
 }
+
