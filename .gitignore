@@ -33,5 +33,7 @@ build/
 .vscode/
 **/firebase_config.json
 .DS_Store
-mvnw**
-.mvn**
+**/mvnw**
+**/.mvn**
+**/.idea/**
+**/*.iml
